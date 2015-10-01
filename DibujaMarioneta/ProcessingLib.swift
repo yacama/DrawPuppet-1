@@ -150,20 +150,20 @@ func polyFill(points: [CGPoint], fill: UIColor = UIColor.blackColor()) {
 }
 
 
-func arc(center: CGPoint, radius: CGFloat, width: CGFloat = 0) {
-    let r = M_PI_4 / 2.0
-    let path = UIBezierPath()
-    path.addArcWithCenter(center, radius: radius, startAngle: CGFloat(r), endAngle: CGFloat(M_PI - r), clockwise: true)
-    if width > 0 {
-        path.lineWidth = width
+func arc(c: CGPoint, _ r: CGFloat, _ w: Int = 0) {  // acorte el nombre de las variables  c por center, r por radius y w por witdh
+    let radio = M_PI_4 / 2.0
+    let path = UIBezierPath(c, r: radius, startAngle: CGFloat(radio), endAngle: CGFloat(M_PI - radio), clockwise: true)
+  //  path.addArcWithCenter(c, r: radius, startAngle: CGFloat(radio), endAngle: CGFloat(M_PI - radio), clockwise: true)
+    if _ w  > 0 {
+        path.lineWidth = w
     }
     path.stroke()
 }
 
-func arcFill(center: CGPoint, radius: CGFloat, fill: UIColor = UIColor.blackColor()) {
-    let r = M_PI_4 / 2.0
-    let path = UIBezierPath()
-    path.addArcWithCenter(center, radius: radius, startAngle: CGFloat(r), endAngle: CGFloat(M_PI - r), clockwise: true)
+func arcFill(center: CGPoint, radius: CGFloat, fill: UIColor = UIColor.blackColor()) { // acorte el nombre de las variables 
+    let radio = M_PI_4 / 2.0
+    let path = UIBezierPath(center, radius: radius, startAngle: CGFloat(radio), endAngle: CGFloat(M_PI - radio), clockwise: true)
+//    path.addArcWithCenter(center, radius: radius, startAngle: CGFloat(radio), endAngle: CGFloat(M_PI - radio), clockwise: true)
     fill.setFill()
     path.fill()
 }
